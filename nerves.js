@@ -1,4 +1,8 @@
 function playerAttack(damage){
+    if(damage ==10){
+        var aud = new Audio("Goku.mp3");
+        aud.play();
+    }
     var elem = document.getElementById("comment");
     var enemy = document.getElementById("enemyName").innerHTML;
     elem.innerHTML = `
