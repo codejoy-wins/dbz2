@@ -133,4 +133,6 @@ function goku(){
 }
 function enemy(){
     console.log("enemy clicked");
+    var audio = new Audio('Cell_True.mp3');
+    audio.play();
 }
