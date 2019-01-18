@@ -134,5 +134,12 @@ function goku(){
 function enemy(){
     console.log("enemy clicked");
     var audio = new Audio('Cell_True.mp3');
-    audio.play();
+    var audio2 = new Audio('Frieza.mp3');
+    var enemy = document.getElementById("enemyName").innerHTML;
+    if(enemy == "Frieza"){
+        console.log("this is frieza not cell");
+        audio2.play();
+    }else{
+        audio.play();
+    }
 }
