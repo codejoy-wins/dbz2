@@ -16,26 +16,40 @@
         </div>
         <div class="side">
             <div id="player">
-                <div id="playerspot">
-                    Goku
-                </div>
                 <div id="playerspot2">
-                    <div>Health</div>
-                    </div>
-                <!-- <img src="./img/goku.jpeg" alt="Goku" class="resize"> -->
+                    <div>Power Level: <span id="playerHealth">125</span></div>
+                </div>
+                <div id="playerMoveset">
+
+                </div>
+                <div id="playerMoveset2">
+                        <ul><span id="playerName">Goku</span></ul>
+                        <li onclick="playerAttack(10)"> <button class="move1">Kamehameha</button></li>
+                        <li onclick="playerAttack(5)"><button class="move2"> Spirit Bomb </button></li>
+                </div>
             </div>
         </div>
         <div class="side">
-            <div id="enemy">
-                <div id="enemyspot">
-                    Cell
-                </div>
+            <div id="enemy">   
                 <div id="enemyspot2">
-                        Health
+                    <div>Power Level: <span id="enemyHealth">90</span></div>
                 </div>
-                <!-- <img src="./img/cell.jpg" alt="Cell" class="resize"> -->
+                <div id="enemyMoveset">
+
+                </div>
+                <div id="enemyMoveset2">
+                        <ul><span id="enemyName">Enemy 1</span></ul>
+                        <li> <button class="move">Blue Cells</button></li>
+                        <li> <button class="move">Destructo</button> </li>
+                </div>
+            </div>
+        </div>
+        <div id="announcer">
+            <div>
+                <p id="comment">Goku's Legacy</p>
             </div>
         </div>
     </div>
+    <script src="./nerves.js"></script>
 </body>
 </html>

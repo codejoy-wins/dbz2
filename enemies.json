@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Freeza",
+        "moves": {
+            "Death Beam": 30,
+            "Golden Death Beam" : 50
+        },
+        "health": 110
+    }
+]
