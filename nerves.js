@@ -6,6 +6,14 @@ function playerAttack(damage){
     `;
     enemyTakeDamage(damage);
 }
+function enemyAttack(damage){
+    var elem = document.getElementById("comment");
+    var enemy = document.getElementById("enemyName").innerHTML;
+    elem.innerHTML = `
+        Goku  was hit  by ${enemy} for ${damage} damage.
+    `;
+    playerTakeDamage(damage);
+}
 
 function enemyTakeDamage(power){
     
@@ -34,6 +42,17 @@ function enemyTakeDamage(power){
     }
     
 }
+function playerTakeDamage(power){
+    console.log(`player hit by ${power} power`);
+    var health = document.getElementById("playerHealth").innerHTML;
+    if(health <= 0){
+        var name = document.getElementById("playerName").innerHTML;
+        playerDeath(name);
+        return;
+    }
+    health -= power;
+    document.getElementById("playerHealth").innerHTML = health;
+}
 
 function enemyDeath(name){
     console.log("Death is here");
@@ -43,6 +62,15 @@ function enemyDeath(name){
     `;
     document.getElementById("enemyName").innerHTML = "kansas";
     getEnemy();
+}
+function playerDeath(name){
+    console.log("Death is here for player");
+    var elem = document.getElementById("comment");
+    elem.innerHTML = `
+        ${name} has been defeated!
+    `;
+    document.getElementById("enemyName").innerHTML = "kansas";
+    getPlayer();
 }
 
 function getEnemy(){
@@ -67,14 +95,32 @@ function getEnemy(){
     console.log(`name is ${name} now`);
     document.getElementById("enemyMoveset2").innerHTML = `
         <ul><span id="enemyName">Cell</span></ul>
-        <li> <button class="move2">Death Beam</button></li>
-        <li> <button class="move23">Golden Death Beam</button> </li>
+        <li> <button class="move2" onclick = "enemyAttack(8)">Death Beam</button></li>
+        <li> <button class="move23" onclick = "enemyAttack(12)">Golden Death Beam</button> </li>
     `;
     var maybe = document.getElementById("enemyspot3");
     if(maybe){
         maybe.id= "enemyspot4";
     }
     fix();
+}
+function fix(){
+    document.getElementById("enemyName").innerHTML = "Frieza";
+}
+function goku(){
+    // play audio
+    console.log("playing noise");
+    var audio = new Audio('Goku.mp3');
+    audio.play();
+}
+function enemy(){
+    console.log("enemy clicked");
+}
+
+function getPlayer(){
+    console.log("finding a new player");
+    location.reload();
+    //tbd
 }
 function fix(){
     document.getElementById("enemyName").innerHTML = "Frieza";
