@@ -79,3 +79,12 @@ function getEnemy(){
 function fix(){
     document.getElementById("enemyName").innerHTML = "Frieza";
 }
+function goku(){
+    // play audio
+    console.log("playing noise");
+    var audio = new Audio('Goku.mp3');
+    audio.play();
+}
+function enemy(){
+    console.log("enemy clicked");
+}
