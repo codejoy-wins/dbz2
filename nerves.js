@@ -74,4 +74,8 @@ function getEnemy(){
     if(maybe){
         maybe.id= "enemyspot4";
     }
+    fix();
+}
+function fix(){
+    document.getElementById("enemyName").innerHTML = "Frieza";
 }
