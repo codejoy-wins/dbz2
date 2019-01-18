@@ -1,6 +1,6 @@
 function playerAttack(damage){
     if(damage ==10){
-        var aud = new Audio("Goku.mp3");
+        var aud = new Audio("Kameha.mp3");
         aud.play();
     }
     var elem = document.getElementById("comment");
@@ -8,6 +8,12 @@ function playerAttack(damage){
     elem.innerHTML = `
         Goku hit ${enemy} with ${damage} damage.
     `;
+    if(damage ==5 && enemy == "Cell"){
+        console.log("alskdf");
+        var audio = new Audio("Cell_True.mp3");
+        audio.play();
+    }
+
     enemyTakeDamage(damage);
 }
 function enemyAttack(damage){
@@ -16,6 +22,27 @@ function enemyAttack(damage){
     elem.innerHTML = `
         Goku  was hit  by ${enemy} for ${damage} damage.
     `;
+    if(enemy == "Frieza"){
+        console.log("frieza attacking");
+        var audi = new Audio("Frieza_Power.mp3");
+        // can have different audio for different moves if not so lazy
+        if(damage == 8){
+            audi.play();
+        }
+        if(damage == 12){
+            audi.play();
+        }
+    }
+    if(enemy == "Cell"){
+        console.log("cell attacking");
+        var audi = new Audio("Cell_attack.mp3");
+        if(damage == 3){
+            audi.play();
+        }
+        if(damage == 7){
+            audi.play();
+        }
+    }
     playerTakeDamage(damage);
 }
 
@@ -137,7 +164,7 @@ function goku(){
 }
 function enemy(){
     console.log("enemy clicked");
-    var audio = new Audio('Cell_True.mp3');
+    var audio = new Audio('Cell_Quip.mp3');
     var audio2 = new Audio('Frieza.mp3');
     var enemy = document.getElementById("enemyName").innerHTML;
     if(enemy == "Frieza"){
