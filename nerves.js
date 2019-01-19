@@ -194,3 +194,11 @@ function absorb(){
     // convert cell from string to int
     document.getElementById("enemyHealth").innerHTML = cell;
 }
+
+function date(){
+    console.log("parsing date");
+    var today = new Date();
+    console.log(today);
+    var spot = document.getElementById("date");
+    spot.innerHTML = today;
+}

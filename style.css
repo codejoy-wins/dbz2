@@ -131,3 +131,8 @@ html, body {
     color: rgba(245, 245, 245, 0.591);
     font-size: .75vw;
 }
+
+#date{
+    color: violet;
+    display: inline-block;
+}
