@@ -83,6 +83,17 @@ function playerTakeDamage(power){
     }
     health -= power;
     document.getElementById("playerHealth").innerHTML = health;
+    if(power == 7){
+        console.log("Must be cell absorbtion");
+        absorb();
+    }
+    if(health <=50){
+        console.log("Player weak");
+        var maybe = document.getElementById("playerspot2");
+        if (maybe){
+            maybe.id= "playerspot3";
+        }
+    }
 }
 
 function enemyDeath(name){
@@ -173,4 +184,13 @@ function enemy(){
     }else{
         audio.play();
     }
+}
+
+function absorb(){
+    console.log("absorbing");
+    var cell = document.getElementById("enemyHealth").innerHTML;
+    cell = parseInt(cell);
+    cell += 5;
+    // convert cell from string to int
+    document.getElementById("enemyHealth").innerHTML = cell;
 }
